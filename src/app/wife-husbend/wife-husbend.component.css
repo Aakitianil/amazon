@@ -1,0 +1,12 @@
+td,th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    width: 10px;
+    height: 15vh;
+    text-align: center; 
+ 
+    padding-top: 25px;
+   
+  }
+ 

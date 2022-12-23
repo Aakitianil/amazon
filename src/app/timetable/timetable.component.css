@@ -1,0 +1,45 @@
+.anil{
+    justify-content: center;
+    text-align: center;
+}
+
+.heading{
+    background-color: lightseagreen;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+.card{
+    text-align: center;
+   border-color: black;
+    border-radius: 2px;
+    border-style: solid;
+    padding: 10px;
+    margin: 10px
+}
+
+.aa{
+    background-color: rgb(2, 42, 2);
+  color: aliceblue;
+  justify-content: center;
+}
+input{
+
+margin: 5px;
+}
+td,th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width: 10px;
+    height: 15vh;
+    text-align: center; 
+ 
+    padding-top: 25px;
+   
+  }
+  .apple{
+    width: 50px;
+    height: 5vh;
+  margin: 5px;
+  }

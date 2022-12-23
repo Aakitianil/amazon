@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-md-8"></div>
+
+<div class="card" style="width: 40rem; text-align: center;">
+  <div><h3>{{marrigeDetails?.["Wifes"]}}</h3></div>
+    <img class="Car" [src]="marrigeDetails?.['Imagepath']" />
+    <div class="card-body">
+      <div class="form-group">
+      <form [formGroup]="regForm" (ngSubmit)="updateMarrige()" >
+      
+      <p class="card-text">Wifes:    <input type="text" formControlName="Wifes" class="form-control" ></p>
+      <div *ngIf="regForm.controls['Wifes'].touched&&regForm.controls['Wifes']?.['errors']"  class="invalid">
+        <div *ngIf="regForm.controls['Wifes']?.['errors']?.['required']"> 
+        
+          Name is required
+        </div>
+          
+          <div *ngIf="regForm.controls['Wifes']?.['errors']?.['minlength']">
+            Ne name chinnaga undhi
+         </div>
+        
+
+        </div>
+        <p class="card-text">Husbends:    <input type="text" formControlName="Husbends"  class="form-control"  ></p>
+      <div *ngIf="regForm.controls['Husbends'].touched&&regForm.controls['Husbends']?.['errors']"  class="invalid">
+        <div *ngIf="regForm.controls['Husbends']?.['errors']?.['required']"> 
+        
+          Name is required
+        </div>
+          
+          <div *ngIf="regForm.controls['Husbends']?.['errors']?.['minlength']">
+            Ne name chinnaga undhi
+         </div>
+        
+
+        </div>
+       
+
+      
+       
+        <p class="card-text">Marriges:    <input type="text" formControlName="Marriges"  class="form-control" >	</p>
+        <div *ngIf="regForm.controls['Marriges'].touched&&regForm.controls['Marrige']?.['errors']"  class="invalid">
+          <div *ngIf="regForm.controls['Marriges']?.['errors']?.['required']"> 
+          
+            Name is required
+          </div>
+            
+            <div *ngIf="regForm.controls['Marrige']?.['errors']?.['minlength']">
+              Ne name chinnaga undhi
+           </div>
+          
+
+          </div>
+          <p class="card-text">Kottakuplease:    <input type="text" formControlName="Kottakuplease"  class="form-control"data-toggle="tooltip" data-placement="top" title="Tooltip on top" ></p>
+          <div *ngIf="regForm.controls['Kottakuplease'].touched&&regForm.controls['Kottakuplease']?.['errors']"  class="invalid">
+            <div *ngIf="regForm.controls['Kottakuplease']?.['errors']?.['required']"> 
+            
+              Name is required
+            </div>
+              
+              <div *ngIf="regForm.controls['Kottakuplease']?.['errors']?.['minlength']">
+                Ne name chinnaga undhi
+             </div>
+            
+  
+            </div>
+            <p class="card-text">MadeinHell:    <input type="text" formControlName="MadeinHell" class="form-control"data-toggle="tooltip" data-placement="top" title="Tooltip on top" ></p>
+            <div *ngIf="regForm.controls['MadeinHell'].touched&&regForm.controls['MadeinHell']?.['errors']"  class="invalid">
+              <div *ngIf="regForm.controls['MadeinHell']?.['errors']?.['required']"> 
+              
+                Name is required
+              </div>
+                
+                <div *ngIf="regForm.controls['MadeinHell']?.['errors']?.['minlength']">
+                  Ne name chinnaga undhi
+               </div>
+              
+    
+              </div>
+    
+    
+    <div>
+      <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Tooltip on top">update</button>
+    </div>
+</form>
+      </div> 
+
