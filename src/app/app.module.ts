@@ -3,57 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< Updated upstream
-
-@NgModule({
-  declarations: [
-    AppComponent
-=======
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
-import { FlipkartlistComponent } from './flipkartlist/flipkartlist.component';
-import { FlipkartchaildComponent } from './flipkartchaild/flipkartchaild.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ObservablesComponent } from './observables/observables.component';
-import { TimetableComponent } from './timetable/timetable.component';
-import { ErrorStyleDirective } from './error-style.directive';
-import { KothaComponent } from './kotha/kotha.component';
-import { WifeHusbendComponent } from './wife-husbend/wife-husbend.component';
-import { FightingComponent } from './fighting/fighting.component';
-import { JwtInterceptor } from './jwt.interceptor';
-
+import { HomeComponent } from './home/home.component';
+import { StockTrackerComponent } from './stock-tracker/stock-tracker.component';
+import { StockDetailComponent } from './stock-detail/stock-detail.component';
+import { StocknewsComponent } from './stocknews/stocknews.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlipkartlistComponent,
-    FlipkartchaildComponent,
-    ObservablesComponent,
-    TimetableComponent,
-    ErrorStyleDirective,
-    KothaComponent,
-    WifeHusbendComponent,
-    FightingComponent,
-  
-   
->>>>>>> Stashed changes
+    HomeComponent,
+    StockTrackerComponent,
+    StockDetailComponent,
+    StocknewsComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule ,
-    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
     
+  
+    
   ],
-  providers: [
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:JwtInterceptor,
-      multi: true
-      
-
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,14 @@
+<!-- <p>stock-detail works!</p>
+<div *ngFor="let stock of stocks">
+{{stock.curentPrice}}
+</div> -->
+<div class="card" *ngFor="let stock of stocks">
+    <div class="card-body">
+      <h5 class="card-title">STOCK DETAILS</h5>
+       <div > 
+        {{stock.curentPrice}}
+      <!-- <p class="card-text">Enter the symbol of a stack to track <a class="aa">(i.e.APPL.TESLA.GOOGLE)</a></p> -->
+      <!-- <input type="text" [(ngModel)]="symbol">&nbsp; -->
+      <!-- <input class="btn" type="button" value="Track it"(click)="tarckSymbol()"> -->
+    </div>
+    </div> 

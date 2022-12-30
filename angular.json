@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Demo3": {
+    "Demo4": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demo3",
+            "outputPath": "dist/demo4",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.css"
-              
+
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Demo3:build:production"
+              "browserTarget": "Demo4:build:production"
             },
             "development": {
-              "browserTarget": "Demo3:build:development"
+              "browserTarget": "Demo4:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Demo3:build"
+            "browserTarget": "Demo4:build"
           }
         },
         "test": {
@@ -96,9 +96,13 @@
               "src/assets"
             ],
             "styles": [
+             
               "src/styles.css"
+             
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           }
         }
       }
