@@ -2,33 +2,31 @@
   
 
     background-color: rgb(143, 164, 181);
-    height: 100vh;
-    border-radius: 10px;
-    margin-top: 20px;
+     /* height: 100vh; */
+   
     
     
     
     }
     .card-body{
         border-radius: 20px;
-         margin-left: 300px;
+          margin-left: 80px; 
         text-align: center;
         height: 35vh;
-        width: 48vw;
+        width: 40vw;
         background-color: white;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         position: relative;
         transform: translateY(-40px);
         padding-top: 10px;
+        }
         
-        
-        
-    }
     .card-title{
         font-size: 35px;
         color:rgb(59, 59, 77) ;
-        font-family: Georgia, serif;
-        padding-top: 40px;
+        font-family:Georgia, serif;;
+       transform: translateY(-40px);
+       margin-right: 120px;
     }
     input{
        
@@ -45,9 +43,77 @@
         .aa{
     color: rgb(217, 217, 244);
         }
-        .btn{
-            background-color: blueviolet;
+        .button{
+            background-color: rgb(86, 57, 216);
             color: white;
-            width: 100px;
-            margin: auto;
-        }
+            margin-right: 360px;
+            transform: translateY(-90px);
+            border-radius: 8px;
+            height: 25px;
+            width: 55px;
+            font-size: 15px;
+            font-family: "bolt";
+            border-color:  rgb(86, 57, 216);
+         
+           }
+
+           .bi{
+           transform: translateY(-83px);
+            background-color: #85a5bf; 
+       border-radius: 15px;
+           margin-left: 10px;
+           /* padding-inline: calc(10px); */
+           align-items: center;
+           /* padding-left: 6px; */
+           padding-left: 4px;
+           padding-top: 3px;
+           box-shadow: 100px;
+           }
+
+    .heading{
+        font-size: larger;
+        font-family: Roboto;
+        margin-right: 360px;
+        margin-bottom: 200px;
+        transform: translateY(-70px);
+    }     
+    
+    .opining{
+        margin-right: 80px;
+        transform: translateY(-317px);
+        font-size: larger;
+        font-family: Roboto;
+       
+    }
+    .current{
+        transform: translateY(-280px); 
+        font-size: larger;
+        font-family: Roboto;
+        margin-right: 360px;
+    }
+    .high{
+        transform: translateY(-339px); 
+        font-size: larger;
+        font-family: Roboto;
+        margin-right: 80px;
+
+    }
+    .ai{
+        transform: translateY(-400px);  
+        margin-left: 280px;
+        font-size: x-large;
+    }
+    .Layer_1{
+        transform: translateY(-460px);
+        margin-left: 280px;
+       color: aqua;
+      
+    }
+
+    .abc{
+        transform: translateY(-480px);
+        margin-left: 300px;
+        color: blueviolet;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    

@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { StockQuote } from '../Model/stockQuote';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-stock-detail',
@@ -7,8 +8,10 @@ import { StockQuote } from '../Model/stockQuote';
   styleUrls: ['./stock-detail.component.css']
 })
 export class StockDetailComponent implements OnInit ,OnChanges{
+ 
 @Input() stocks:StockQuote[]=[];
-  constructor() { }
+fullData!:string
+  constructor(private stockservice:StockService) { }
 
   ngOnInit(): void {
     console.log("ngOninit")
@@ -17,5 +20,24 @@ export class StockDetailComponent implements OnInit ,OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     console.log("chnge",changes)
   }
+  deleteApple(stocks:string){
+     
+      this.stockservice.deleteApple(this.fullData).subscribe(result => {
+        
+        console.log("Delete Flipkart details",result)
+        
+        
+      },
+     
+      )
+      
+  
+      
+    }
+  
+  }
+  
 
-}
+  
+
+

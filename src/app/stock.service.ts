@@ -16,4 +16,7 @@ export class StockService {
     );
 
   }
+  deleteApple(stock:any){
+    return this.http.delete("token"+ stock);
+  }
 }

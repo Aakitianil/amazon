@@ -1,0 +1,32 @@
+.card{
+    background-color: rgb(143, 164, 181);
+    height: 100vh;
+}
+.card-body{
+    height: 30vh;
+    width: 75vw;
+    background-color: white;
+  margin-left: 150px;
+  transform: translateY(250px);
+  border-radius: 20px;
+    
+}
+.heading1{
+    font-size: 35px;
+    color:rgb(59, 59, 77) ;
+    font-family: Georgia, serif;
+    margin-left: 100px;
+    transform: translateY(-20px);
+}
+.button{
+    background-color: rgb(86, 57, 216);
+    color: white;
+    margin-left: 25px;
+    transform: translateY(-60px);
+    border-radius: 8px;
+    height: 25px;
+    width: 55px;
+    font-size: 15px;
+    font-family: "bolt";
+    border-color:  rgb(86, 57, 216);
+}

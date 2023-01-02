@@ -8,13 +8,14 @@ import { StockQuote } from '../Model/stockQuote';
 })
 export class HomeComponent implements OnInit {
   stockList:StockQuote[]=[];
-
+ 
   constructor() { }
 
   ngOnInit(): void {
   }
   addSymbol($event:StockQuote){
     this.stockList.push($event);
+   
     console.log("home " ,$event);
 
   }
