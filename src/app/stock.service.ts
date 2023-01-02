@@ -14,9 +14,12 @@ export class StockService {
     return this.http.get(
       this.configUrl + "quote?symbol=" + symbol + this.token
     );
+    }
+    getSearchData(symbol:string){
+      return this.http.get(
+        this.configUrl + "search?q=" + symbol + this.token
+      );
 
-  }
-  deleteApple(stock:any){
-    return this.http.delete("token"+ stock);
+
   }
 }

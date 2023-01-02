@@ -1,3 +1,4 @@
+
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { StockQuote } from '../Model/stockQuote';
 import { StockService } from '../stock.service';
@@ -15,7 +16,13 @@ export class StockTrackerComponent implements OnInit {
   ngOnInit(): void {
   }
   tarckSymbol(){
+    this.stockService.getSearchData(this.symbol).subscribe((data:object)=>{
+      console.log("getSearchData",data)
+    }
+    )
+
     this.stockService.getSymbolData(this.symbol).subscribe((data:object)=>{
+
       let jsonData= JSON.parse(JSON.stringify(data));
 let abc:StockQuote=new StockQuote();
 localStorage.setItem( this.symbol,this.symbol); 
@@ -32,7 +39,7 @@ abc.timestamp=jsonData.t;
 console.log("anil",abc)
 
       this.addStocker.emit(abc);
-      // console.log("data::",data)
+       console.log("data::",data)
     });
 
   }
