@@ -12,68 +12,51 @@ import { StockService } from '../stock.service';
   styleUrls: ['./stock-tracker.component.css']
 })
 export class StockTrackerComponent implements OnInit {
-  @Output() addStocker: EventEmitter<Stock>= new EventEmitter<Stock>();
-  symbol!:string;
-  constructor(private stockService:StockService) { }
+  @Output() addStocker: EventEmitter<Stock> = new EventEmitter<Stock>();
+  symbol!: string;
+  constructor(private stockService: StockService) { }
 
   ngOnInit(): void {
   }
-  tarckSymbol(){
-    let stSymbol:StockSymbol=new StockSymbol();
+  tarckSymbol() {
+    let stSymbol: StockSymbol = new StockSymbol();
+    let stQuote: StockQuote = new StockQuote();
     forkJoin({
       search: this.stockService.getSearchData(this.symbol),
-      symbol: this.stockService.getSymbolData(this.symbol)
-      }).subscribe(({search,symbol})=>{
-        let stQuote:StockQuote=new StockQuote();
-        let jsonData= JSON.parse(JSON.stringify(data));
+      quote: this.stockService.getSymbolData(this.symbol)
+    }).subscribe(({ search, quote }) => {
 
-localStorage.setItem( this.symbol,this.symbol); 
-console.log("total",data)
+      let jsonData = JSON.parse(JSON.stringify(quote));
 
-stQuote.curentPrice=jsonData.c;
-stQuote.change=jsonData.d;
-stQuote.persentChange=jsonData.dp;
-stQuote.high=jsonData.h;
-stQuote.low=jsonData.l;
-stQuote.open=jsonData.o;
-stQuote.priviceclose=jsonData.pc;
-stQuote.timestamp=jsonData.t;
-console.log("anil",stQuote)
-        let stock: Stock = new Stock();
-        stock.StockQuote= search;
-        stock.StockSymbol=symbol;
-         
+      localStorage.setItem(this.symbol, this.symbol);
+      console.log(" quote ", quote)
+
+      stQuote.currentPrice = jsonData.c;
+      stQuote.change = jsonData.d;
+      stQuote.persentChange = jsonData.dp;
+      stQuote.high = jsonData.h;
+      stQuote.low = jsonData.l;
+      stQuote.open = jsonData.o;
+      stQuote.priviceclose = jsonData.pc;
+      stQuote.timestamp = jsonData.t;
+      // stocksymbol code
+      jsonData = JSON.parse(JSON.stringify(search));
+      stSymbol.description = jsonData.result[0].description;
+      stSymbol.displaySymbol = jsonData.result[0].displaySymbol;
+      stSymbol.symbol = jsonData.result[0].symbol;
+      stSymbol.type = jsonData.result[0].type;
+
+     
+      let stock: Stock = new Stock();
+      stock.StockQuote = stQuote;
+      stock.StockSymbol = stSymbol;
+      this.stockService.stock = stock;
       this.addStocker.emit(stock);
-
-      });
-    this.stockService.getSearchData(this.symbol).subscribe((data:Object)=>{
-      let jsonData=JSON.parse(JSON.stringify(data));
-     
-      localStorage.setItem( this.symbol,this.symbol); 
-      // console.log("getSearchData",jsonData)
-      // console.log("getSearchData",jsonData.getJSONData(0))
-      // console.log("getSearchData",Object.values(0))
-    stSymbol.description = jsonData.result[0].description;
-    stSymbol.displaySymbol =jsonData.result[0].displaySymbol;
-    stSymbol.symbol = jsonData.result[0].symbol;
-    stSymbol.type = jsonData.result[0].type;
-    console.log(stSymbol)
-    let stock: Stock = new Stock();
-   stock.StockQuote= stQuote;
-   stock.StockSymbol=stSymbol
-    
- this.addStocker.emit(stock);
-    }
-    )
-    let stQuote:StockQuote=new StockQuote();
-    this.stockService.getSymbolData(this.symbol).subscribe((data:object)=>{
-
-      
-
-     
-       console.log("data::",data)
-      
+      console.log("stock", stock)
     });
    
+    
+   
+
   }
 }

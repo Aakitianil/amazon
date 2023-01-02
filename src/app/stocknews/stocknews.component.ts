@@ -1,5 +1,8 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Stock } from '../Model/stock';
 import { StockQuote } from '../Model/stockQuote';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-stocknews',
@@ -7,11 +10,16 @@ import { StockQuote } from '../Model/stockQuote';
   styleUrls: ['./stocknews.component.css']
 })
 export class StocknewsComponent implements OnInit {
-  @Input() stocknewList:StockQuote[]=[];
-  constructor() { }
+  @Input() stock:Stock[]=[];
+  constructor(private stockservice:StockService, private route: ActivatedRoute ) {}
 
   ngOnInit(): void {
-    console.log("ngOninit")
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log("ngOninit",id);
+    console.log("new", this.stockservice.stock);
+    this.stockservice.getStockNews(this.stockservice.stock.StockSymbol.displaySymbol).subscribe(data => {
+      console.log("newsdata", data);
+    })
   }
 
   ngOnChanges(changes: SimpleChanges): void {

@@ -9,7 +9,7 @@ const routes: Routes = [
     path:"home",component:HomeComponent,pathMatch:"full"
   },
   {
-    path:"stocknewDetails/:id",component:StocknewsComponent,pathMatch:"full"
+    path:"stock-news/:id",component:StocknewsComponent,pathMatch:"full"
   },
 
 ];

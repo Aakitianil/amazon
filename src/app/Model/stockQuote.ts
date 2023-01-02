@@ -1,5 +1,5 @@
 export class StockQuote{
-curentPrice!:number;
+currentPrice!:number;
 change!:number;
 persentChange!:number;
 high!:number;

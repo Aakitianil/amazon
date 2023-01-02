@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Stock } from '../Model/stock';
 import { StockQuote } from '../Model/stockQuote';
 import { StockService } from '../stock.service';
 
@@ -9,7 +10,7 @@ import { StockService } from '../stock.service';
 })
 export class StockDetailComponent implements OnInit ,OnChanges{
  
-@Input() stocks:Object[]=[];
+@Input() stocks:Stock[]=[];
 fullData!:string
   constructor(private stockservice:StockService) { }
 
