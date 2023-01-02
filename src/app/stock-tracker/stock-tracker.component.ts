@@ -18,7 +18,7 @@ export class StockTrackerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  tarckSymbol() {
+  trackSymbol() {
     let stSymbol: StockSymbol = new StockSymbol();
     let stQuote: StockQuote = new StockQuote();
     forkJoin({

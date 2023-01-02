@@ -19,7 +19,7 @@ fullData!:string
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("chnge",changes)
+    console.log("change",changes)
   }
   deleteApple(stocks:string){
      

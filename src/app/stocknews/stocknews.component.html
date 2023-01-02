@@ -1,9 +1,18 @@
 
 <div class="card">
     <div class="card-body" style="justify-content: center;">
+
         
-        <h1 class="heading1">{{stock}} </h1> 
-        <button  class="button">AAPL</button>
-      
+        <h1 class="heading1">{{stockservice.stock.StockSymbol.description}} </h1> 
+        <button  class="button">{{stockservice.stock.StockSymbol.displaySymbol}}</button>
+        <div class="flex-container">
+            <div *ngFor="let news of newsData['data']">{{news.data.</div>
+            
+          </div>
+        <!-- <p class="heading">Change today: +{{stockservice.stock.StockQuote.currentPrice}}%</p>
+        <p class="opining">Opening price:${{stockservice.stock.StockQuote.change}}</p>
+        <p class="current">Current price: ${{stockservice.stock.StockQuote.currentPrice}}</p>
+        <p class="high">High price…: ${{stockservice.stock.StockQuote.currentPrice}}</p> -->
     </div>
+   
 </div>

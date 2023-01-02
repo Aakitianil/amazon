@@ -11,19 +11,22 @@ import { StockService } from '../stock.service';
 })
 export class StocknewsComponent implements OnInit {
   @Input() stock:Stock[]=[];
-  constructor(private stockservice:StockService, private route: ActivatedRoute ) {}
+  newsData: Object[]=[]; 
+  constructor(public stockservice:StockService, public route: ActivatedRoute ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     console.log("ngOninit",id);
     console.log("new", this.stockservice.stock);
     this.stockservice.getStockNews(this.stockservice.stock.StockSymbol.displaySymbol).subscribe(data => {
-      console.log("newsdata", data);
+      this.newsData = JSON.parse(JSON.stringify(data));
+      // this.newsData= this.newsData.slice(Math.max(this.newsData.length - 3, 1))
+      console.log("newsdata", this.newsData);
     })
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("chnge",changes)
+    console.log("change",changes)
   }
 
 }
