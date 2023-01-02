@@ -9,7 +9,7 @@ import { StockService } from '../stock.service';
 })
 export class StockDetailComponent implements OnInit ,OnChanges{
  
-@Input() stocks:StockQuote[]=[];
+@Input() stocks:Object[]=[];
 fullData!:string
   constructor(private stockservice:StockService) { }
 
@@ -22,14 +22,14 @@ fullData!:string
   }
   deleteApple(stocks:string){
      
-      this.stockservice.deleteApple(this.fullData).subscribe(result => {
+      // this.stockservice.deleteApple(this.fullData).subscribe(result => {
         
-        console.log("Delete Flipkart details",result)
+      //   console.log("Delete Flipkart details",result)
         
         
-      },
+      // },
      
-      )
+      // )
       
   
       

@@ -115,5 +115,6 @@
         margin-left: 300px;
         color: blueviolet;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        cursor: pointer;
     }
     
