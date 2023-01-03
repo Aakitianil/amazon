@@ -3,11 +3,11 @@
     height: 100vh;
 }
 .card-body{
-    height: 30vh;
-    width: 75vw;
+    height: 50vh;
+    width: 55vw;
     background-color: white;
   margin-left: 150px;
-  transform: translateY(250px);
+  transform: translateY(200px);
   border-radius: 20px;
     
 }
@@ -24,8 +24,8 @@
     margin-left: 25px;
     transform: translateY(-60px);
     border-radius: 8px;
-    height: 25px;
-    width: 55px;
+    height: 30px;
+    width:55px;
     font-size: 15px;
     font-family: "bolt";
     border-color:  rgb(86, 57, 216);
@@ -38,6 +38,23 @@
     background-color: #f1f1f1;
     margin: 10px;
     padding: 20px;
-    font-size: 30px;
+    font-size: 20px;
   }
   
+  .abc
+  {
+    text-align: center;
+ 
+    font-size: large;
+    margin-top:40px;
+    color: brown;
+   
+    transform: translateY(-30px);
+
+  }
+  .bi
+  {
+    margin-right:250px;
+
+  }
+ 
