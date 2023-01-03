@@ -2,9 +2,8 @@
   
 
     background-color: rgb(143, 164, 181);
-     /* height: 100vh; */
+  scroll-padding-inline-start: 20px;
    
-    
     
     
     }
@@ -18,15 +17,16 @@
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         position: relative;
         transform: translateY(-40px);
-        padding-top: 10px;
+      
+       padding-top: 10px;
         }
         
     .card-title{
-        font-size: 35px;
+        font-size: 25px;
         color:rgb(59, 59, 77) ;
         font-family:Georgia, serif;;
-       transform: translateY(-40px);
-       margin-right: 120px;
+       transform: translateY(-35px);
+       margin-right: 80px;
     }
     input{
        
@@ -46,28 +46,29 @@
         .button{
             background-color: rgb(86, 57, 216);
             color: white;
-            margin-right: 360px;
-            transform: translateY(-90px);
+            margin-right: 400px;
+            transform: translateY(-72px);
             border-radius: 8px;
             height: 25px;
             width: 55px;
-            font-size: 15px;
+            font-size: 12px;
             font-family: "bolt";
             border-color:  rgb(86, 57, 216);
          
            }
 
            .bi{
-           transform: translateY(-83px);
+           transform: translateY(-100px);
             background-color: #85a5bf; 
        border-radius: 15px;
-           margin-left: 10px;
+           margin-left: 440px;
            /* padding-inline: calc(10px); */
            align-items: center;
            /* padding-left: 6px; */
            padding-left: 4px;
            padding-top: 3px;
            box-shadow: 100px;
+
            }
 
     .heading{
