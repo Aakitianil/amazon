@@ -6,7 +6,8 @@
         <h1 class="heading1">{{stockservice.stock.StockSymbol.description}} </h1> 
         <button  class="button">{{stockservice.stock.StockSymbol.displaySymbol}}</button>
         <div class="flex-container">
-            <div *ngFor="let news of newsData">{{news.symbol}}
+            
+        <div  class="element-style" *ngFor="let news of newsData">{{news.symbol}}
             
        
         <p class="year">year: {{news.year}}</p>
