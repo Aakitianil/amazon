@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Stock } from '../Model/stock';
 import { StockQuote } from '../Model/stockQuote';
 import { StockService } from '../stock.service';
@@ -11,7 +11,8 @@ import { StockService } from '../stock.service';
 export class StockDetailComponent implements OnInit ,OnChanges{
  
 @Input() stocks:Stock[]=[];
-fullData!:string
+@Output() deleteSymbol:EventEmitter<string>=new EventEmitter<string>();
+
   constructor(private stockservice:StockService) { }
 
   ngOnInit(): void {
@@ -21,7 +22,10 @@ fullData!:string
   ngOnChanges(changes: SimpleChanges): void {
     console.log("change",changes)
   }
-  deleteApple(stocks:string){
+  deleteStock(stocks:string){
+
+
+    this.deleteSymbol.emit(stocks);
      
       // this.stockservice.deleteApple(this.fullData).subscribe(result => {
         

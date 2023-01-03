@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Stock } from '../Model/stock';
+import { StockNews } from '../Model/stocknews';
 import { StockQuote } from '../Model/stockQuote';
 import { StockService } from '../stock.service';
 
@@ -11,7 +12,7 @@ import { StockService } from '../stock.service';
 })
 export class StocknewsComponent implements OnInit {
   @Input() stock:Stock[]=[];
-  newsData: Object[]=[]; 
+  newsData: StockNews[]=[]; 
   constructor(public stockservice:StockService, public route: ActivatedRoute ) {}
 
   ngOnInit(): void {
@@ -19,8 +20,27 @@ export class StocknewsComponent implements OnInit {
     console.log("ngOninit",id);
     console.log("new", this.stockservice.stock);
     this.stockservice.getStockNews(this.stockservice.stock.StockSymbol.displaySymbol).subscribe(data => {
-      this.newsData = JSON.parse(JSON.stringify(data));
-      // this.newsData= this.newsData.slice(Math.max(this.newsData.length - 3, 1))
+     let jsonData = JSON.parse(JSON.stringify(data));
+
+     jsonData.data.slice(-3).forEach((element:object)  => {
+let elementJsonData=JSON.parse(JSON.stringify(element));
+      let  news:StockNews=new StockNews();
+      news.symbol=elementJsonData.symbol;
+      news.year=elementJsonData.year;
+      news.month=elementJsonData.month;
+      news.change=elementJsonData.change;
+      news.mspr=elementJsonData.mspr;
+       this.newsData.push(news);
+
+  
+});
+
+
+   
+
+
+
+ // this.newsData= this.newsData.slice(Math.max(this.newsData.length - 3, 1))
       console.log("newsdata", this.newsData);
     })
   }
